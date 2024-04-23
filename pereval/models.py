@@ -65,7 +65,7 @@ class PerevalAdded(models.Model):
 
 
 class Image(models.Model):
-    data = models.CharField(max_length=255)
+    data = models.CharField(max_length=2083)
     title = models.CharField(max_length=255, verbose_name='заголовок')
     pereval = models.ForeignKey(PerevalAdded, on_delete=models.CASCADE)
 

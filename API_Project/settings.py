@@ -75,14 +75,21 @@ WSGI_APPLICATION = 'API_Project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'api_pereval',
+#         'USER': config("FSTR_DB_LOGIN"),
+#         'PASSWORD': config("FSTR_DB_PASS"),
+#         'HOST': config("FSTR_DB_HOST"),
+#         'PORT': config("FSTR_DB_PORT"),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pereval',
-        'USER': config("FSTR_DB_LOGIN"),
-        'PASSWORD': config("FSTR_DB_PASS"),
-        'HOST': config("FSTR_DB_HOST"),
-        'PORT': config("FSTR_DB_PORT"),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

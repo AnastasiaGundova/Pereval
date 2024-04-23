@@ -1,3 +1,5 @@
+from urllib.parse import urlparse
+
 from .models import *
 from rest_framework import serializers
 
@@ -47,30 +49,35 @@ class PerevalAddedSerializer(serializers.HyperlinkedModelSerializer):
     user = UserSerializer()
     coord = CoordSerializer()
     level = LevelSerializer(allow_null=True)
-    image = ImageSerializer(many=True)
+    image = serializers.URLField(required=False, allow_null=True)
 
     class Meta:
         model = PerevalAdded
         fields = ['id', 'beauty_title', 'title', 'other_title', 'connect', 'add_time', 'user', 'coord', 'level',
-                  'image'
-        ]
+                  'image']
 
     def create(self, validated_data, **kwargs):
-        user = validated_data.pop('user')
-        coord = validated_data.pop('coord')
-        level = validated_data.pop('level')
-        image = validated_data.pop('image')
+        user_data = validated_data.pop('user')
+        coord_data = validated_data.pop('coord')
+        level_data = validated_data.pop('level')
 
-        user, created = User.objects.get_or_create(**user)
-        coord_id = Coord.objects.create(**coord)
-        level = Level.objects.create(**level)
-        pereval = PerevalAdded.objects.create(**validated_data, user=user, coord=coord_id, level=level, status="NW")
+        user, created = User.objects.get_or_create(**user_data)
+        coord = Coord.objects.create(**coord_data)
+        level = Level.objects.create(**level_data)
 
-        for i in image:
-            image = i.pop('image')
-            title = i.pop('title')
-            Image.objects.create(image=image, pereval_id=pereval, title=title)
+        image = validated_data.pop('image', None)
+
+        pereval = PerevalAdded.objects.create(user=user, coord=coord, level=level, status="NW", image=image, **validated_data)
+
+        if image:
+            try:
+                parsed_url = urlparse(image)
+                if all([parsed_url.scheme, parsed_url.netloc, parsed_url.path]):
+                    image = Image.objects.create(pereval=pereval, url=image)
+                    return image
+                else:
+                    raise serializers.ValidationError({'image': ['Enter a valid URL.']})
+            except:
+                raise serializers.ValidationError({'image': ['Enter a valid URL.']})
 
         return pereval
-
-
