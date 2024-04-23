@@ -7,7 +7,7 @@ from rest_framework import serializers
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['email', 'fam', 'name', 'otc', 'phone',]
+        fields = ['email', 'fam', 'name', 'otc', 'phone', ]
 
     def save(self, **kwargs):
         self.is_valid()
@@ -34,7 +34,7 @@ class CoordSerializer(serializers.ModelSerializer):
 class LevelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Level
-        fields = ['winter', 'spring', 'summer', 'autumn',]
+        fields = ['winter', 'spring', 'summer', 'autumn', ]
 
 
 class ImageSerializer(serializers.ModelSerializer):
@@ -60,24 +60,17 @@ class PerevalAddedSerializer(serializers.HyperlinkedModelSerializer):
         user_data = validated_data.pop('user')
         coord_data = validated_data.pop('coord')
         level_data = validated_data.pop('level')
+        image_data = validated_data.pop('image', None)
 
         user, created = User.objects.get_or_create(**user_data)
         coord = Coord.objects.create(**coord_data)
         level = Level.objects.create(**level_data)
 
-        image = validated_data.pop('image', None)
+        pereval = PerevalAdded.objects.create(user=user, coord=coord, level=level, status="NW", **validated_data)
 
-        pereval = PerevalAdded.objects.create(user=user, coord=coord, level=level, status="NW", image=image, **validated_data)
-
-        if image:
-            try:
-                parsed_url = urlparse(image)
-                if all([parsed_url.scheme, parsed_url.netloc, parsed_url.path]):
-                    image = Image.objects.create(pereval=pereval, url=image)
-                    return image
-                else:
-                    raise serializers.ValidationError({'image': ['Enter a valid URL.']})
-            except:
-                raise serializers.ValidationError({'image': ['Enter a valid URL.']})
-
+        if image_data:
+            for i in image_data:
+                title = i.pop('title')
+                data = i.pop('data')
+                Image.objects.create(pereval=pereval, data=data, title=title)
         return pereval
