@@ -2,11 +2,11 @@ from django.db import models
 
 
 class User(models.Model):
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(max_length=254, unique=True)
     fam = models.CharField(max_length=255, verbose_name='Фамилия')
     name = models.CharField(max_length=255, verbose_name='Имя')
     otc = models.CharField(max_length=255, verbose_name='Отчество')
-    phone = models.CharField(max_length=12, verbose_name='Телефон')
+    phone = models.CharField(max_length=15, verbose_name='Телефон')
 
 
 class Coord(models.Model):
@@ -56,7 +56,7 @@ class PerevalAdded(models.Model):
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=NEW)
     beauty_title = models.CharField(max_length=255, verbose_name='перевал')
     title = models.CharField(max_length=255, verbose_name='наименование')
-    other_title = models.CharField(max_length=255, verbose_name='описание')
+    other_title = models.CharField(max_length=255, verbose_name='другие названия')
     connect = models.TextField(verbose_name='соединение')
     add_time = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь')
@@ -67,5 +67,7 @@ class PerevalAdded(models.Model):
 class Image(models.Model):
     data = models.CharField(max_length=2083)
     title = models.CharField(max_length=255, verbose_name='заголовок')
-    pereval = models.ForeignKey(PerevalAdded, on_delete=models.CASCADE)
+    pereval = models.ForeignKey(PerevalAdded, on_delete=models.CASCADE, related_name='images')
 
+    def __str__(self):
+        return f'{self.pk} {self.title}'

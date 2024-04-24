@@ -4,7 +4,7 @@ from .models import PerevalAdded, User, Coord, Level, Image
 
 class PerevalAddedAdmin(admin.ModelAdmin):
     model = PerevalAdded
-    list_display = ('status', 'beauty_title', 'status', 'title', 'other_title', 'connect', 'user', 'coord', 'image')
+    list_display = ('status', 'beauty_title', 'status', 'title', 'other_title', 'connect', 'user', 'coord', 'images')
     list_filter = ('add_time', 'beauty_title', 'title', 'other_title', 'user', 'level')
 
 

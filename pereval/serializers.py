@@ -1,13 +1,11 @@
-from urllib.parse import urlparse
-
-from .models import *
 from rest_framework import serializers
+from pereval.models import User, Coord, Level, Image, PerevalAdded
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['email', 'fam', 'name', 'otc', 'phone', ]
+        fields = ['email', 'fam', 'name', 'otc', 'phone']
 
     def save(self, **kwargs):
         self.is_valid()
@@ -49,22 +47,26 @@ class PerevalAddedSerializer(serializers.HyperlinkedModelSerializer):
     user = UserSerializer()
     coord = CoordSerializer()
     level = LevelSerializer(allow_null=True)
-    image = ImageSerializer(many=True)
+    images = ImageSerializer(many=True)
 
     class Meta:
         model = PerevalAdded
         fields = ['id', 'beauty_title', 'title', 'other_title', 'connect', 'add_time', 'user', 'coord', 'level',
-                  'image']
+                  'images']
 
     def create(self, validated_data, **kwargs):
         user_data = validated_data.pop('user')
         coord_data = validated_data.pop('coord')
         level_data = validated_data.pop('level')
-        image = validated_data.pop('image')
+        images_data = validated_data.pop('images')
 
         user, created = User.objects.get_or_create(**user_data)
         coord = Coord.objects.create(**coord_data)
         level = Level.objects.create(**level_data)
 
-        pereval = PerevalAdded.objects.create(user=user, coord=coord, level=level, status="NW", image=image, **validated_data)
+        pereval = PerevalAdded.objects.create(user=user, coord=coord, level=level, status="NW", **validated_data)
+
+        for image_data in images_data:
+            Image.objects.create(**image_data, pereval=pereval)
+
         return pereval
