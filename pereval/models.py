@@ -2,6 +2,7 @@ from django.db import models
 
 
 class User(models.Model):
+    ID = models.AutoField(primary_key=True)
     email = models.EmailField(max_length=254, unique=True)
     fam = models.CharField(max_length=255, verbose_name='Фамилия')
     name = models.CharField(max_length=255, verbose_name='Имя')
