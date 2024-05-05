@@ -3,7 +3,7 @@ from django.db import models
 
 class User(models.Model):
     ID = models.AutoField(primary_key=True)
-    email = models.EmailField(max_length=254, unique=True)
+    email = models.EmailField(max_length=254)
     fam = models.CharField(max_length=255, verbose_name='Фамилия')
     name = models.CharField(max_length=255, verbose_name='Имя')
     otc = models.CharField(max_length=255, verbose_name='Отчество')
@@ -48,10 +48,10 @@ class PerevalAdded(models.Model):
     REJECTED = 'RJ'
 
     STATUS_CHOICES = (
-        ('NW', 'New'),
-        ('PN', 'Pending'),
-        ('AC', 'Accepted'),
-        ('RJ', 'Rejected'),
+        ('NW', 'Новый'),
+        ('PN', 'Запрос рассматривается'),
+        ('AC', 'Запрос успешно принят'),
+        ('RJ', 'Запрос не принят'),
     )
 
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=NEW)
