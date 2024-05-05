@@ -25,6 +25,8 @@ class PerevalAddedViewset(viewsets.ModelViewSet):
     queryset = PerevalAdded.objects.all()
     serializer_class = PerevalAddedSerializer
 
+    filterset_fields = ("user__email",)
+
     def create(self, request, *args, **kwargs):
         serializer = PerevalAddedSerializer(data=request.data)
 
@@ -46,6 +48,27 @@ class PerevalAddedViewset(viewsets.ModelViewSet):
                 'status': status.HTTP_500_INTERNAL_SERVER_ERROR,
                 'message': 'Ошибка подключения к базе данных',
                 'id': None,
+            })
+
+    def partial_update(self, request, *args, **kwargs):
+        pereval = self.get_object()
+        if pereval.status == 'NW':
+            serializer = PerevalAddedSerializer(pereval, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response({
+                    'state': 1,
+                    'message': 'Сохранения завершены успешно'
+                })
+            else:
+                return Response({
+                    'state': 0,
+                    'message': serializer.errors
+                })
+        else:
+            return Response({
+                'state': 0,
+                'message': f"Отклонено. Причина: {pereval.get_status_display()}"
             })
 
 

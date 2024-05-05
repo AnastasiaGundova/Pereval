@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from pereval.models import User, Coord, Level, Image, PerevalAdded
+from drf_writable_nested import WritableNestedModelSerializer
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -43,16 +44,17 @@ class ImageSerializer(serializers.ModelSerializer):
         fields = ['data', 'title']
 
 
-class PerevalAddedSerializer(serializers.HyperlinkedModelSerializer):
+class PerevalAddedSerializer(WritableNestedModelSerializer):
     user = UserSerializer()
     coord = CoordSerializer()
     level = LevelSerializer(allow_null=True)
     images = ImageSerializer(many=True)
+    status = serializers.CharField()
 
     class Meta:
         model = PerevalAdded
-        fields = ['id', 'beauty_title', 'title', 'other_title', 'connect', 'add_time', 'user', 'coord', 'level',
-                  'images']
+        fields = ['id', 'status', 'beauty_title', 'title', 'other_title', 'connect', 'add_time', 'user', 'coord',
+                  'level', 'images']
 
     def create(self, validated_data, **kwargs):
         user_data = validated_data.pop('user')
@@ -70,3 +72,18 @@ class PerevalAddedSerializer(serializers.HyperlinkedModelSerializer):
             Image.objects.create(**image_data, pereval=pereval)
 
         return pereval
+
+    def validate(self, data):
+        if self.instance is not None:
+            instance_user = self.instance.user
+            data_user = data.get('user')
+            validating_user_fields = [
+                instance_user.email != data_user['email'],
+                instance_user.fam != data_user['fam'],
+                instance_user.name != data_user['name'],
+                instance_user.otc != data_user['otc'],
+                instance_user.phone != data_user['phone']
+            ]
+            if data_user is not None and any(validating_user_fields):
+                raise serializers.ValidationError({'Отклонено': 'Невозможно изменить данные пользователя'})
+        return data

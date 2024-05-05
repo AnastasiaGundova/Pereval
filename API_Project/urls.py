@@ -21,8 +21,9 @@ from pereval import views
 
 router = routers.DefaultRouter()
 router.register(r'pereval', views.PerevalAddedViewset, 'PerevalAdded')
+router.register(r'user', views.UserViewset, basename='User')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
 ]
