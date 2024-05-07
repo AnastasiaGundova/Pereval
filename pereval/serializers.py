@@ -66,7 +66,7 @@ class PerevalAddedSerializer(WritableNestedModelSerializer):
         coord = Coord.objects.create(**coord_data)
         level = Level.objects.create(**level_data)
 
-        pereval = PerevalAdded.objects.create(user=user, coord=coord, level=level, status="NW", **validated_data)
+        pereval = PerevalAdded.objects.create(user=user, coord=coord, level=level, **validated_data)
 
         for image_data in images_data:
             Image.objects.create(**image_data, pereval=pereval)
