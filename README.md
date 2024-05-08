@@ -12,14 +12,16 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
 5) Receiving notification of the sending status (successful/unsuccessful).
 
 ### Data about the pass transmitted to the "ФСТР":
-1) The coordinates of the object and its height;
-2) The name of the object;
-3) Some photos;
-4) Information about the user who transmitted the data about the pass:
+1) The name of the object;
+2) Time
+3) Information about the user who transmitted the data about the pass:
    * user name (full name in a string);
    * mail;
    * telephone.
-  
+4) The coordinates of the object and its height;
+5) Level of difficulty of the route depending on the season of the year
+6) Some photos;
+
 > [!NOTE]
 > Example of a Json file:
 
