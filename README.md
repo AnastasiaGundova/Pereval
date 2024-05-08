@@ -79,4 +79,7 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
 ### Views
 * UserViewset:
   > This viewset manages operations for the User model. It allows for listing all users, creating a new user, retrieving a specific user, updating user information, and deleting a user.
-  
+* CoordViewset:
+ > This viewset handles the Coord model. It provides functionality to list all coordinates, add new coordinates, retrieve details of specific coordinates, update them, and delete them.
+
+ 
