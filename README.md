@@ -18,8 +18,9 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
 4) Information about the user who transmitted the data about the pass:
    * user name (full name in a string);
    * mail;
-   * telephone. :shipit:
+   * telephone.
 
+```
 {
     "status": "",
     "beauty_title": "",
@@ -46,3 +47,4 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
     },
     "images": []
 }
+```
