@@ -63,3 +63,9 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
     ]
 }
 ```
+## The content of the project
+### Models
+* User
+  > This model represents a user with a unique ID, email address, surname (fam), first name (name), patronymic (otc), and phone number. It's designed to store personal     
+  > information about the users of the application.
+
