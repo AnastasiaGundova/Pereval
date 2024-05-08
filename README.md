@@ -19,32 +19,44 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
    * user name (full name in a string);
    * mail;
    * telephone.
+   * 
+> Example of a Json file:
 
 ```
 {
-    "status": "",
-    "beauty_title": "",
-    "title": "",
-    "other_title": "",
-    "connect": "",
+    "status": "NW",
+    "beauty_title": "pass",
+    "title": "Bear Gate Pass",
+    "other_title": "Bear Gate",
+    "connect": "new",
+    "add_time": "2024-05-02T10:39:01.595478Z",
     "user": {
-        "email": "",
-        "fam": "",
-        "name": "",
-        "otc": "",
-        "phone": ""
+        "email": "testemail@mail.ru",
+        "fam": "Surname",
+        "name": "Name",
+        "otc": "Middle name",
+        "phone": "+7 555 55 55"
     },
     "coord": {
-        "latitude": null,
-        "longitude": null,
-        "height": null
+        "latitude": "55.38420000",
+        "longitude": "89.15250000",
+        "height": 3000
     },
     "level": {
-        "winter": null,
-        "spring": null,
-        "summer": null,
-        "autumn": null
+        "winter": "3A",
+        "spring": "2A",
+        "summer": "1А",
+        "autumn": "1А"
     },
-    "images": []
+    "images": [
+        {
+            "data": "https://image.jpg",
+            "title": "Descent"
+        },
+        {
+            "data": "https://image.jpg",
+            "title": "Сlimbing"
+        }
+    ]
 }
 ```
