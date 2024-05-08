@@ -65,6 +65,12 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
 ```
 ## The content of the project
 ### Models
-* User
+* User:
   > This model represents a user with a unique ID, email address, surname (fam), first name (name), patronymic (otc), and phone number. It's designed to store personal information about the users of the application.
+* Coord:
+  > The Coord model holds geographical coordinates, including latitude, longitude, and height. It's used to represent a specific location of the path.
+* Level:
+  > This model defines the different levels of difficulty of the routes for the passes, classified by season: winter, spring, summer and autumn. Each level is represented by a code, for example, "1A" is the easiest and "3B" is the most difficult.
+* PerevalAdded:
+  > The PerevalAdded model contains information about a particular pass (pereval), including its status (new, pending, accepted, or rejected), titles, connection details, the time it was added, and associated user and coordinate information. It also links to the difficulty level through the Level model.
 
