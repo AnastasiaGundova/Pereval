@@ -19,7 +19,8 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
    * user name (full name in a string);
    * mail;
    * telephone.
-   * 
+  
+> [!NOTE]
 > Example of a Json file:
 
 ```
