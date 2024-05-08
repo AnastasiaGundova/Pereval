@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -85,11 +86,22 @@ WSGI_APPLICATION = 'API_Project.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+ 'default': {
+     'ENGINE': 'django.db.backends.mysql',
+     'NAME': 'splasha$default',
+     'USER': 'splasha',
+     'PASSWORD': 'Wert304050!',
+     'HOST': 'splasha.mysql.pythonanywhere-services.com',
+     'PORT': '3306',
+ }
 }
 
 # Password validation
