@@ -12,8 +12,10 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
 5) Receiving notification of the sending status (successful/unsuccessful).
 
 ### Data about the pass transmitted to the "ФСТР":
-* `Coordinates` of the pass and its `height`;
-* User `name`;
-* User's `email` and `phone number`;
-* The `name of the pass`;
-* Several `photos` of the pass.
+1) The coordinates of the object and its height;
+2) The name of the object;
+3) Some photos;
+4) Information about the user who transmitted the data about the pass:
+  * user name (full name in a string);
+  * mail;
+  * telephone.
