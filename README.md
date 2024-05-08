@@ -75,3 +75,8 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
   > The PerevalAdded model contains information about a particular pass (pereval), including its status (new, pending, accepted, or rejected), titles, connection details, the time it was added, and associated user and coordinate information. It also links to the difficulty level through the Level model.
 * Image:
   > This model is for storing image data related to a pass. It includes a data field for the image file path or URL, a title, and a foreign key to the associated PerevalAdded record.
+
+### Views
+* UserViewset:
+  > This viewset manages operations for the User model. It allows for listing all users, creating a new user, retrieving a specific user, updating user information, and deleting a user.
+  
