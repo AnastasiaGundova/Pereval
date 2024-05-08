@@ -10,3 +10,10 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
 3) Filling in the full name and contact details (phone and e-mail).
 4) Sending data to the "ФСТР" server.
 5) Receiving notification of the sending status (successful/unsuccessful).
+
+### Data about the pass transmitted to the "ФСТР":
+1) Coordinates of the pass and its height;
+2) User name;
+3) User's email and phone number;
+4) The name of the pass;
+5) Several photos of the pass.
