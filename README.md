@@ -16,6 +16,6 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
 2) The name of the object;
 3) Some photos;
 4) Information about the user who transmitted the data about the pass:
-  * user name (full name in a string);
-  * mail;
-  * telephone.
+   * user name (full name in a string);
+   * mail;
+   * telephone.
