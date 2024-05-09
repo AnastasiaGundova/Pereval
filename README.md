@@ -4,6 +4,7 @@
 ### Description:
 The project was developed for the `"ФСТР" Russian Sports Tourism Federation ` ( site - https://pereval.online/ ) to maintain a base of mountain passes, which is filled with tourists. In the mountains, people will enter data about the pass into the application and send it to the `"ФСТР"` as soon as Internet access is available. A moderator from the federation will verify and enter information received from users into the database, and they, in turn, will be able to see the moderation status in the mobile application and view the database with objects entered by others.
 
+## The content of the project
 ### Usage possibilities for the user:
 1) Entering information about a new object (pass) into the object card.
 2) Editing of object data not sent to the FSTR server in the application. The Internet does not always work at the pass.
@@ -84,7 +85,6 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 > * You cannot change the data when the pass status is different from "NW".
 > * You cannot change user data.
 
-## The content of the project
 ### Models
 * User:
   > This model represents a user with a unique ID, email address, surname (fam), first name (name), patronymic (otc), and phone number. It's designed to store personal information about the users of the application.
