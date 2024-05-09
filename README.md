@@ -125,14 +125,23 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 link - http://splasha.pythonanywhere.com
 
 ![4fsp6svu](https://github.com/AnastasiaGundova/Pereval/assets/145155665/17a2a9ee-849c-4b0b-a9d4-ebeb053411bf)
+
 > Main page
+
 ![sq9dr095](https://github.com/AnastasiaGundova/Pereval/assets/145155665/6e1f481a-7865-42f7-8f67-7c9058a2ba2d)
+
 > A page with all mountain passes
-![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/db8cdc6d-508b-49a7-8ca8-3e7e5933d1ac)
+
+![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/efedf654-6a60-4b83-b717-806313764da3)
+
 > Creating a pass through json
+
 ![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/88949bb7-78e0-4316-b4df-ca79e3a0199c)
+
 > The page of the successfully created pass
+
 ![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/950932b1-4c33-443a-90be-747cded7f9a3)
+
 > A page with all users
 
 
