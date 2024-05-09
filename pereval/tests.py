@@ -123,6 +123,6 @@ class PerevalAddedSerializerTestCase(TestCase):
             },
         ]
         # print(expected_data)
-        # print('=======================================================================')
+        # print('==============================================================')
         # print(serializer_data)
         self.assertEqual(serializer_data, expected_data)
