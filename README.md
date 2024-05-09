@@ -63,6 +63,15 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
     ]
 }
 ```
+### Acceptable values of the status field:
+  1) new; (NW) - new;
+  2) pending (PN) — if the moderator has taken over the work;
+  3) accepted (AC)  — moderation was successful;
+  4) rejected (RJ) — moderation was passed, the information was not accepted.
+     
+> [!NOTE]  
+> The login, password and the path to the database are obtained from the environment variables (.env)
+
 ### Result of the method: JSON
   * status — HTTP code, integer:
   * 500 — error when performing the operation;
@@ -88,13 +97,6 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 * Image:
   > This model is for storing image data related to a pass. It includes a data field for the image file path or URL, a title, and a foreign key to the associated PerevalAdded record.
 
-### Acceptable values of the status field:
-  1) new; (NW) - new;
-  2) pending (PN) — if the moderator has taken over the work;
-  3) accepted (AC)  — moderation was successful;
-  4) rejected (RJ) — moderation was passed, the information was not accepted.
-    
-> The login, password and the path to the database are obtained from the environment variables (.env)
     
 
  
