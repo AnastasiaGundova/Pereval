@@ -72,8 +72,8 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
 The `partial_update` method in the `PerevalAddedViewset` allows for `updating` specific fields of a pass entry. If the pass is `new (status 'NW')`, it can be partially updated. Valid updates are saved and confirmed with a `success` message `(state: 1)`. Invalid data results in an error message detailing the issues `(state: 0)`. If the pass isn't new, the update is rejected, and the reason based on the pass's current status is provided. This method ensures that only certain updates are allowed depending on the pass's status, maintaining the integrity of the data.
 
 > [!IMPORTANT]
-> You cannot change the data when the pass status is different from "NW".
-> You cannot change user data.
+> * You cannot change the data when the pass status is different from "NW".
+> * You cannot change user data.
 
 ## The content of the project
 ### Models
@@ -89,10 +89,10 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
   > This model is for storing image data related to a pass. It includes a data field for the image file path or URL, a title, and a foreign key to the associated PerevalAdded record.
 
 ### Acceptable values of the status field:
-  ◉ new; (NW) - new;
-  ◉ pending (PN) — if the moderator has taken over the work;
-  ◉ accepted (AC)  — moderation was successful;
-  ◉ rejected (RJ) — moderation was passed, the information was not accepted.
+  1) new; (NW) - new;
+  2) pending (PN) — if the moderator has taken over the work;
+  3) accepted (AC)  — moderation was successful;
+  4) rejected (RJ) — moderation was passed, the information was not accepted.
     
 > The login, password and the path to the database are obtained from the environment variables (.env)
     
