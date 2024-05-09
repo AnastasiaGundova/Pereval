@@ -69,9 +69,6 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
   2) pending (PN) — if the moderator has taken over the work;
   3) accepted (AC)  — moderation was successful;
   4) rejected (RJ) — moderation was passed, the information was not accepted.
-     
-> [!NOTE]  
-> The login, password and the path to the database are obtained from the environment variables (.env)
 
 ### Result of the method: JSON
   * status — HTTP code, integer:
@@ -98,6 +95,10 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
   > This model is for storing image data related to a pass. It includes a data field for the image file path or URL, a title, and a foreign key to the associated PerevalAdded record.
 
 ## Installing the project
+
+> [!NOTE]  
+> The login, password and the path to the database are obtained from the environment variables (.env)
+
 1) Download this repository;
 2) Create a virtual environment and activate it;
 3) The project's external dependencies are listed in the `requirements.txt` file. This file is created using the ```pip freeze > requirements.txt``` command to ensure that   
