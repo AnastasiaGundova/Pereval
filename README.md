@@ -118,3 +118,7 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
   > view all passes and users, as well as their creation, editing and deletion;
 * `admin/` - administrative panel
   > You need a super user to log in. To create a superuser, do the command: ``` python manage.py createsuperuser ```
+
+## The project was also published on the Pythonanywhere host server
+link - http://splasha.pythonanywhere.com
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
