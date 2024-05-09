@@ -121,5 +121,4 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 
 ## The project was also published on the Pythonanywhere host server
 link - http://splasha.pythonanywhere.com
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/84b4c657-1667-4be0-ae6a-20b633002d8c)
-)
+![Screenshot](file:///C:/Users/Splas/Downloads/pythonanywhere_1.png)
