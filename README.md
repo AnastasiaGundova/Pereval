@@ -100,13 +100,16 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 ## Installing the project
 1) Download this repository;
 2) Create a virtual environment and activate it;
-3) The project's external dependencies are listed in the `requirements.txt` file. This file is created using the
-```pip freeze > requirements.txt```
-command to ensure that all necessary packages are included.
-To install these dependencies, run the following command in your terminal:
-
+3) The project's external dependencies are listed in the `requirements.txt` file. This file is created using the ```pip freeze > requirements.txt``` command to ensure that   
+   all necessary packages are included.
+   To install these dependencies, run the following command in your terminal:
 ```pip install -r requirements.txt```
-
-5) Create a database:
+4) Create a database:
 ``` python manage.py migrate```
- 
+5) To start the server use:
+   ```python manage.py runserver```
+## Using Project URLs
+* `pereval/` - a list of all passes and the ability to create them via an html form or json;
+  > It includes filtering passes by user's email
+* `pereval/<int:pk>/` - information about a particular pass by its id;
+  > It includes a delete button, as well as full `(Put)` and partial `(Patch)` editing buttons;
