@@ -98,8 +98,11 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
   > This model is for storing image data related to a pass. It includes a data field for the image file path or URL, a title, and a foreign key to the associated PerevalAdded record.
 
 ## Installing the project
-- [x] #739
-- [ ] https://github.com/octo-org/octo-repo/issues/740
-- [ ] Add delight to the experience when all tasks are complete :tada:
-
+1) Download this repository;
+2) Create a virtual environment and activate it;
+3) The project's external dependencies are listed in the `requirements.txt` file. This file is created using the ```pip freeze > requirements.txt``` command to ensure that all necessary packages are included.
+To install these dependencies, run the following command in your terminal:
+```pip install -r requirements.txt```
+4) Create a database:
+   ``` python manage.py migrate```
  
