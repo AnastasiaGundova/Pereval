@@ -63,6 +63,12 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
     ]
 }
 ```
+### Result of the method: JSON
+  * status — HTTP code, integer:
+  * 500 — error when performing the operation;
+  * 400 — Bad Request (if there are not enough fields);
+  * 200 is a success.
+  
 ## The content of the project
 ### Models
 * User:
@@ -76,10 +82,13 @@ The project was developed for the `"ФСТР" Russian Sports Tourism Federation 
 * Image:
   > This model is for storing image data related to a pass. It includes a data field for the image file path or URL, a title, and a foreign key to the associated PerevalAdded record.
 
-### Views
-* UserViewset:
-  > This viewset manages operations for the User model. It allows for listing all users, creating a new user, retrieving a specific user, updating user information, and deleting a user.
-* CoordViewset:
- > This viewset handles the Coord model. It provides functionality to list all coordinates, add new coordinates, retrieve details of specific coordinates, update them, and delete them.
+###Acceptable values of the status field:
+    ◉ new; (NW) - new;
+    ◉ pending (PN) — if the moderator has taken over the work;
+    ◉ accepted (AC)  — moderation was successful;
+    ◉ rejected (RJ) — moderation was passed, the information was not accepted.
+    
+  > The login, password and the path to the database are obtained from the environment variables (.env)
+    
 
  
