@@ -97,6 +97,9 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 * Image:
   > This model is for storing image data related to a pass. It includes a data field for the image file path or URL, a title, and a foreign key to the associated PerevalAdded record.
 
-    
+## Installing the project
+- [x] #739
+- [ ] https://github.com/octo-org/octo-repo/issues/740
+- [ ] Add delight to the experience when all tasks are complete :tada:
 
  
