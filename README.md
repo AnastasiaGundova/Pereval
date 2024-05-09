@@ -96,9 +96,6 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 
 ## Installing the project
 
-> [!NOTE]  
-> The login, password and the path to the database are obtained from the environment variables (.env)
-
 1) Download this repository;
 2) Create a virtual environment and activate it;
 3) The project's external dependencies are listed in the `requirements.txt` file. This file is created using the ```pip freeze > requirements.txt``` command to ensure that   
@@ -109,6 +106,10 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 ``` python manage.py migrate```
 5) To start the server use:
    ```python manage.py runserver```
+
+> [!NOTE]  
+> The login, password and the path to the database are obtained from the environment variables (.env)
+
 ## Using Project URLs
 * `pereval/` - a list of all passes and the ability to create them via an html form or json;
   > It includes filtering passes by user's email
@@ -124,6 +125,7 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 link - http://splasha.pythonanywhere.com
 
 ![4fsp6svu](https://github.com/AnastasiaGundova/Pereval/assets/145155665/17a2a9ee-849c-4b0b-a9d4-ebeb053411bf)
+![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/ea737df1-fe41-4e7e-80db-1d6d38945b4e)
 
 
 
