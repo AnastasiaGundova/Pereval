@@ -1,4 +1,4 @@
-# REST API for the Pereval application
+# REST API for the Pereval application :mountain:
 ## A fully functional project written in Python using the Django framework that makes it possible to add and edit information about various mountain passes
 
 ### :scroll: Description:
