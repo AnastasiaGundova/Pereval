@@ -3,7 +3,7 @@ from rest_framework import status
 
 from rest_framework.test import APITestCase
 
-from pereval.models import PerevalAdded, User, Coord, Level, Image
+from pereval.models import PerevalAdded, User, Coord, Level
 from django.urls import reverse
 
 from pereval.serializers import PerevalAddedSerializer

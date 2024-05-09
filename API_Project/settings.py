@@ -75,34 +75,16 @@ WSGI_APPLICATION = 'API_Project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'Project_pereval',
-#         'USER': config("FSTR_DB_LOGIN"),
-#         'PASSWORD': config("FSTR_DB_PASS"),
-#         'HOST': config("FSTR_DB_HOST"),
-#         'PORT': config("FSTR_DB_PORT"),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Project_pereval',
+        'USER': config("FSTR_DB_LOGIN"),
+        'PASSWORD': config("FSTR_DB_PASS"),
+        'HOST': config("FSTR_DB_HOST"),
+        'PORT': config("FSTR_DB_PORT"),
     }
 }
-
-# DATABASES = {
-#  'default': {
-#      'ENGINE': 'django.db.backends.mysql',
-#      'NAME': 'splasha$default',
-#      'USER': 'splasha',
-#      'PASSWORD': 'Wert304050!',
-#      'HOST': 'splasha.mysql.pythonanywhere-services.com',
-#      'PORT': '3306',
-#  }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -142,7 +124,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
