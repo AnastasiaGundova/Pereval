@@ -125,7 +125,8 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 link - http://splasha.pythonanywhere.com
 
 ![4fsp6svu](https://github.com/AnastasiaGundova/Pereval/assets/145155665/17a2a9ee-849c-4b0b-a9d4-ebeb053411bf)
-![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/ea737df1-fe41-4e7e-80db-1d6d38945b4e)
+![sq9dr095](https://github.com/AnastasiaGundova/Pereval/assets/145155665/6e1f481a-7865-42f7-8f67-7c9058a2ba2d)
+
 
 
 
