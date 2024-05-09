@@ -122,28 +122,30 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
   > You need a super user to log in. To create a superuser, do the command: ``` python manage.py createsuperuser ```
 
 ## The project was also published on the Pythonanywhere host server
-link - http://splasha.pythonanywhere.com
+
+link :paperclip: - http://splasha.pythonanywhere.com
 
 ![4fsp6svu](https://github.com/AnastasiaGundova/Pereval/assets/145155665/17a2a9ee-849c-4b0b-a9d4-ebeb053411bf)
 
- Main page
+ `Main page`:arrow_up:
 
 ![sq9dr095](https://github.com/AnastasiaGundova/Pereval/assets/145155665/6e1f481a-7865-42f7-8f67-7c9058a2ba2d)
 
- A page with all mountain passes
+ `A page with all mountain passes`:arrow_up:
 
 ![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/efedf654-6a60-4b83-b717-806313764da3)
 
- Creating a pass through json
+ `Creating a pass through json`:arrow_up:
 
 ![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/b1dc3d2d-fb34-4cf7-9a29-60aa296a495e)
 
 
- The page of the successfully created pass
+ `The page of the successfully created pass`:arrow_up:
 
-![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/950932b1-4c33-443a-90be-747cded7f9a3)
+![image](https://github.com/AnastasiaGundova/Pereval/assets/145155665/7c627ccf-a724-4ad5-8324-132072aa097e)
 
- A page with all users
+
+   `A page with all users`:arrow_up:
 
 
 
