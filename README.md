@@ -1,7 +1,7 @@
 # REST API for the Pereval application
 ## A fully functional project written in Python using the Django framework that makes it possible to add and edit information about various mountain passes
 
-### Description:
+### :scroll: Description:
 The project was developed for the `"ФСТР" Russian Sports Tourism Federation ` ( site - https://pereval.online/ ) to maintain a base of mountain passes, which is filled with tourists. In the mountains, people will enter data about the pass into the application and send it to the `"ФСТР"` as soon as Internet access is available. A moderator from the federation will verify and enter information received from users into the database, and they, in turn, will be able to see the moderation status in the mobile application and view the database with objects entered by others.
 
 ## The content of the project
@@ -94,7 +94,7 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 * Image:
   > This model is for storing image data related to a pass. It includes a data field for the image file path or URL, a title, and a foreign key to the associated PerevalAdded record.
 
-## Installing the project
+## :open_book: Installing the project
 
 1) Download this repository;
 2) Create a virtual environment and activate it;
