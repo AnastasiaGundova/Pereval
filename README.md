@@ -112,4 +112,9 @@ The `partial_update` method in the `PerevalAddedViewset` allows for `updating` s
 * `pereval/` - a list of all passes and the ability to create them via an html form or json;
   > It includes filtering passes by user's email
 * `pereval/<int:pk>/` - information about a particular pass by its id;
-  > It includes a delete button, as well as full `(Put)` and partial `(Patch)` editing buttons;
+  > It includes a delete button, as well as full `(PUT)` and partial `(PATCH)` editing buttons;
+* `user/` - list of all users;
+* `swagger/` or `redoc/` - using swagger/redoc
+  > view all passes and users, as well as their creation, editing and deletion;
+* `admin/` - administrative panel
+  > You need a super user to log in. To create a superuser, do the command: ``` python manage.py createsuperuser ```
